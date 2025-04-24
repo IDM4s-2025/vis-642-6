@@ -1,7 +1,7 @@
-import plotly.express as px
+
 import pandas as pd
-
-df = pd.read_csv("Iris.csv")
-
-fig = px.scatter(df, x="SepalWidthCm", y="SepalLengthCm", color="Species")
+import plotly.express as px
+df = px.data.iris()
+fig = px.scatter(df, x="petal_length", y="petal_width", color="species",
+                 size='sepal_length', hover_data=['sepal_width'])
 fig.show()
